@@ -1,9 +1,10 @@
 <?php
+
 class HelloController extends AppController
 {
-    public function index()
+    public function welcome()
     {
-        $message = Hello::getMessage();
+        $threads = Hello::getAllThreads();
         $this->set(get_defined_vars());
     }
 }

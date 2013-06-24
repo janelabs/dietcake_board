@@ -1,8 +1,11 @@
 <?php
+
 class Hello extends AppModel
 {
-    public static function getMessage()
+    public static function getAllThreads()
     {
-        return 'hello world!';
+        $db = DB::conn();
+        $rows = $db->rows('SELECT * FROM thread');
+        return $rows ? $rows : false;
     }
 }
